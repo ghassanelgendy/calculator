@@ -1,28 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400;700&display=swap');
+
 :root {
-    /*Palette*/
-    --prim-clr: ;
-    --sec-clr: ;
-    --tertiary-clr: ;
-    --bg-clr: ;
-    /*Fonts*/
-    --ff-accent: 'Outfit', sans-serif;
-    --ff-regular: 'Montserrat', sans-serif;
-    --fw-regular: 500;
-    --fw-bold: 700;
+  /*Palette*/
+  --prim-clr: #C20114;
+  --sec-clr: #E3D26F;
+  --tertiary-clr: #78C091;
+  --bg-clr: #6D7275;
+  --black-clr: #0C120C;
+  --white-clr: #eee;
+  /*Fonts*/
+  --ff-regular: 'Dosis', sans-serif;
+  --fw-regular: 400;
+  --fw-bold: 700;
 }
 
-.operator {
-    border: green solid 1px;
+.operator,
+.equalSign {
+  border: lightcoral solid 1px;
+  background-color: var(--sec-clr);
+
+}
+
+.operators {
+  display: flex;
+  flex-direction: column;
+}
+
+.screen {
+  padding: 0 1rem;
+  background-color: var(--tertiary-clr);
+  min-height: 4rem;
+  width: 100%;
+  border: var(--tertiary-clr)
+}
+
+.frame {
+  width: 300px;
+  display: flex;
+  align-items: center;
+}
+
+button {
+  cursor: pointer;
+  width: 4rem;
+  border: red solid 1px;
+  background-color: var(--prim-clr);
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+
+
+.number-buttons {
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
 }
 
 .container {
-    border: blue solid 1px;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid 3px lightcoral;
 }
 
-.number-button {
-    border: red solid 1px;
+body {
+  user-select: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  font-family: var(--ff-regular);
+  color: var(--black-clr);
+  background-color: var(--bg-clr);
 }
-
 
 
 /*
@@ -31,16 +85,16 @@
 *,
 *::before,
 *::after {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /*
   2. Remove default margin
 */
 * {
-    margin: 0;
+  margin: 0;
 }
 
 /*
@@ -49,9 +103,9 @@
   4. Improve text rendering
 */
 body {
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-    height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  height: 100vh;
 }
 
 /*
@@ -62,8 +116,8 @@ picture,
 video,
 canvas,
 svg {
-    display: block;
-    max-width: 100%;
+  display: block;
+  max-width: 100%;
 }
 
 /*
@@ -73,7 +127,7 @@ input,
 button,
 textarea,
 select {
-    font: inherit;
+  font: inherit;
 }
 
 /*
@@ -86,5 +140,5 @@ h3,
 h4,
 h5,
 h6 {
-    overflow-wrap: break-word;
+  overflow-wrap: break-word;
 }
