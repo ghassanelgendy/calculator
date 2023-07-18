@@ -12,8 +12,10 @@ let second;
 let firstOperand = [];
 let equation = [];
 let secondOperand = [];
+let currentlyDisplaying;
 let operatorSign;
 let res = 0;
+screen.textContent = currentlyDisplaying;
 function updateScreen(text) {
 	if (text.length < 15) {
 		screen.textContent = text;
@@ -38,27 +40,36 @@ numbers.forEach(
 			updateScreen(equation.join().replace(/,/g, ""));
 		})
 );
-//operator input
 operators.forEach((operator) =>
 	operator.addEventListener("click", (e) => {
 		operatorSign = operator.textContent;
 		first = parseInt(firstOperand.join().replace(/,/g, ""));
 		equation.push(operator.textContent.replace(/\s/g, ""));
+		console.log("wahed", first);
+
 		firstOperand = [];
+		secondOperand = [];
+
 		numbers.forEach(
 			(
 				number //tany rakam input
 			) =>
 				number.addEventListener("click", (e) => {
-					secondOperand.push(number.textContent.replace(/\s/g, ""));
-					second = parseInt(secondOperand.join().replace(/,/g, ""));
-					updateScreen(equation.join().replace(/,/g, ""));
-					secondOperand = [];
+					if (first) {
+						secondOperand.push(number.textContent.replace(/\s/g, ""));
+						second = parseInt(secondOperand.join().replace(/,/g, ""));
+						updateScreen(equation.join().replace(/,/g, ""));
+						console.log("HOPOOOOOOOO", secondOperand);
+						console.log("etnen", second);
+					}
 				})
 		);
 	})
 );
 equal.addEventListener("click", (e) => {
+	console.log("me two ", second);
+	console.log("me first ", first);
+	console.log("me op ", operatorSign);
 	operate(first, operatorSign, second);
 	clearAll();
 });
