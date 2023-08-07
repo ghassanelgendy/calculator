@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo&family=Ubuntu:wght@300;400;700&display=swap');
 
 :root {
   /*Palette*/
-  --prim-clr: #C20114;
-  --sec-clr: #E3D26F;
-  --tertiary-clr: #78C091;
-  --bg-clr: #6D7275;
+  --prim-clr: #72195A;
+  --sec-clr: #6B5CA5;
+  --tertiary-clr: #4190fe;
+  --highlighted-clr: #4C1036;
+  --bg-clr: #C6D8FF;
   --black-clr: #0C120C;
   --white-clr: #eee;
   /*Fonts*/
@@ -16,7 +18,6 @@
 
 .operator,
 .equalSign {
-  border: lightcoral solid 1px;
   background-color: var(--sec-clr);
 
 }
@@ -27,28 +28,54 @@
 }
 
 .screen {
-  padding: 0 1rem;
+  padding: 0 0.8rem;
   background-color: var(--tertiary-clr);
   min-height: 4rem;
   width: 100%;
-  border: var(--tertiary-clr)
+  border-radius: 0.4rem 0.4rem 0 0;
+  -webkit-border-radius: 0.4rem 0.4rem 0 0;
+  -moz-border-radius: 0.4rem 0.4rem 0 0;
+  -ms-border-radius: 0.4rem 0.4rem 0 0;
+  -o-border-radius: 0.4rem 0.4rem 0 0;
+
 }
 
 .frame {
+  padding-top: 0.4rem;
   width: 300px;
   display: flex;
   align-items: center;
+  background-color: var(--tertiary-clr);
+  border-radius: 0 0 0.6rem 0.6rem;
+  -webkit-border-radius: 0 0 0.6rem 0.6rem;
+  -moz-border-radius: 0 0 0.6rem 0.6rem;
+  -ms-border-radius: 0 0 0.6rem 0.6rem;
+  -o-border-radius: 0 0 0.6rem 0.6rem;
 }
 
 button {
+  border-radius: 9%;
   cursor: pointer;
   width: 4rem;
-  border: red solid 1px;
+  border: var(--tertiary-clr) solid 1px;
   background-color: var(--prim-clr);
   flex-grow: 1;
   flex-shrink: 0;
+  -webkit-border-radius: 9%;
+  -moz-border-radius: 9%;
+  -ms-border-radius: 9%;
+  transition: background-color 200ms ease-in-out;
+  -o-border-radius: 9%;
+  -webkit-transition: background-color 200ms ease-in-out;
+  -moz-transition: background-color 200ms ease-in-out;
+  -ms-transition: background-color 200ms ease-in-out;
+  -o-transition: background-color 200ms ease-in-out;
 }
 
+
+button:hover {
+  background-color: var(--highlighted-clr);
+}
 
 .number-buttons {
   padding: 0;
@@ -57,6 +84,7 @@ button {
   justify-content: center;
   align-items: center;
   flex-direction: row;
+
 }
 
 .container {
@@ -64,7 +92,9 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: solid 3px lightcoral;
+  border: solid 3px var(--sec-clr);
+  border-radius: 0.6rem;
+
 }
 
 body {
@@ -74,7 +104,6 @@ body {
   align-items: center;
   font-size: 2.5rem;
   font-family: var(--ff-regular);
-  color: var(--black-clr);
   background-color: var(--bg-clr);
 }
 
@@ -95,6 +124,7 @@ body {
 */
 * {
   margin: 0;
+  color: var(--white-clr);
 }
 
 /*
@@ -141,4 +171,75 @@ h4,
 h5,
 h6 {
   overflow-wrap: break-word;
+}
+
+
+
+#openModalButton {
+  border: none;
+  width: 100%;
+  font-size: 1rem;
+  background-color: #4389eb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 200;
+  padding: 0.4rem;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+/* Modal Content */
+.modal-content {
+  font-size: 1.5rem;
+  font-family: 'Ubuntu',
+    sans-serif;
+  ;
+  background-color: var(--prim-clr);
+  margin: 40% auto;
+  border-radius: 0.9rem;
+  padding: 20px;
+  border: none;
+  width: 90%;
+  position: relative;
+  -webkit-border-radius: 0.9rem;
+  -moz-border-radius: 0.9rem;
+  -ms-border-radius: 0.9rem;
+  -o-border-radius: 0.9rem;
+}
+
+/* Close Button */
+.close {
+  color: var(--white-clr);
+  float: right;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: var(--black-clr);
+  text-decoration: none;
+  cursor: pointer;
 }
